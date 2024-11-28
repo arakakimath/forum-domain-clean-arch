@@ -4,7 +4,8 @@
   "description": "Domain-driven Design (DDD) is a software development approach that emphasizes collaboration between technical experts and domain experts to build complex systems. It focuses on aligning the design and implementation of the system with the core business domain.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "",
