@@ -1,10 +1,13 @@
 import { randomUUID } from "node:crypto"
 import { Entity } from "../../core/entities/entity"
+import { UniqueEntityID } from "../../core/entities/unique-entity-id"
 
 interface AnswerProps {
-  questionId: string
+  questionId: UniqueEntityID
+  authorId: UniqueEntityID
   content: string
-  authorId: string
+  createdAt: Date
+  updatedAt?: Date
 }
 
 export class Answer extends Entity<AnswerProps> {
