@@ -1,0 +1,17 @@
+{
+  "name": "rocketseat-nodejs-class04-clean-ddd",
+  "version": "1.0.0",
+  "description": "Domain-driven Design (DDD) is a software development approach that emphasizes collaboration between technical experts and domain experts to build complex systems. It focuses on aligning the design and implementation of the system with the core business domain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  }
+}
