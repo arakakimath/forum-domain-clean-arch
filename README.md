@@ -115,3 +115,9 @@ Domain-driven Design (DDD) is a software development approach that emphasizes co
 ---
 
 By following the principles and practices of DDD, you can build systems that are more resilient, adaptable, and aligned with the needs of your business.
+
+
+
+# Clean Architecture
+
+![Clean Architecture](./Clean-Architecture-3.png)
