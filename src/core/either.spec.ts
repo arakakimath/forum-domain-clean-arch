@@ -1,6 +1,6 @@
 import { Either, left, right } from './either'
 
-function doSomething(shouldSuccess: boolean): Either<string, number> {
+function doSomething(shouldSuccess: boolean): Either<string, string> {
   if (shouldSuccess) return right('success')
   else return left('error')
 }
