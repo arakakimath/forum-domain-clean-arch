@@ -1,13 +1,13 @@
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
 import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswerCommentsRepository } from 'test/repositories/in-memory-answer-comments-repository'
-import { CommentOnAnswerUseCase } from './comment-on-answer'
+import { CommentOnAnswerUseCase } from '@/domain/forum/application/use-cases/comment-on-answer'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
 let inMemoryAnswerCommentsRepository: InMemoryAnswerCommentsRepository
 let sut: CommentOnAnswerUseCase
 
-describe('Comment on answer', () => {
+describe('Comment on Answer', () => {
   beforeEach(() => {
     inMemoryAnswersRepository = new InMemoryAnswersRepository()
     inMemoryAnswerCommentsRepository = new InMemoryAnswerCommentsRepository()
@@ -26,11 +26,11 @@ describe('Comment on answer', () => {
     await sut.execute({
       answerId: answer.id.toString(),
       authorId: answer.authorId.toString(),
-      content: 'Answer comment',
+      content: 'Comentário teste',
     })
 
     expect(inMemoryAnswerCommentsRepository.items[0].content).toEqual(
-      'Answer comment',
+      'Comentário teste',
     )
   })
 })
