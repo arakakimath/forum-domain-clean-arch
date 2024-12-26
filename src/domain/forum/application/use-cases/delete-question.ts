@@ -10,6 +10,7 @@ interface DeleteQuestionUseCaseRequest {
 
 type DeleteQuestionUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
+  // eslint-disable-next-line @typescript-eslint/ban-types
   {}
 >
 export class DeleteQuestionUseCase {

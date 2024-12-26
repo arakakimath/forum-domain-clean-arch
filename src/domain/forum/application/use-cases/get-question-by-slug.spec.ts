@@ -2,13 +2,21 @@ import { GetQuestionBySlugUseCase } from './get-question-by-slug'
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
 import { Slug } from '@/domain/forum/enterprise/entities/value-objects/slug'
 import { makeQuestion } from 'test/factories/make-question'
+import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository'
+import { Right } from '@/core/either'
 
+let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let sut: GetQuestionBySlugUseCase
 
 describe('Get Question By Slug', () => {
   beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
+    inMemoryQuestionAttachmentsRepository =
+      new InMemoryQuestionAttachmentsRepository()
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+      inMemoryQuestionAttachmentsRepository,
+    )
+
     sut = new GetQuestionBySlugUseCase(inMemoryQuestionsRepository)
   })
 
@@ -23,7 +31,11 @@ describe('Get Question By Slug', () => {
       slug: 'example-question',
     })
 
-    expect(result.value?.question.id).toBeTruthy()
-    expect(result.value?.question.title).toEqual(newQuestion.title)
+    expect(result).toBeInstanceOf(Right)
+
+    if (result instanceof Right) {
+      expect(result.value.question.id).toBeTruthy()
+      expect(result.value.question.title).toEqual(newQuestion.title)
+    }
   })
 })
