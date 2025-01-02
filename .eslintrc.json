@@ -18,7 +18,8 @@
       }
     ],
     "camelcase": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "no-new": "off"
   },
 
   "env": {
