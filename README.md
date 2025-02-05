@@ -6,6 +6,8 @@ This repository contains all the domain part of this forum. Besides that, there 
 
 To built this project, it was used concepts like DDD, SOLID, Clean Architecture, Design patterns (Factory and Repository), etc. Vitest was used for dealing with tests.
 
+The infra part and integration can be found in [this repository](https://github.com/arakakimath/forum-infra-clean-arch).
+
 ---
 
 ## How to run the project
